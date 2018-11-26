@@ -95,6 +95,15 @@ function addPhraseToDisplay(arr) {
   }
 };
 
+
+//===============================================
+// GAME RESETS
+//===============================================
+// 1. Clears the phrase section.
+// 2. Generates and inserts the new phrase.
+// 3. Clears the keyboard of 'disabled' buttons.
+// 4. Reset the scoreboard.
+
 function resetPhrase() { 
   const ul = document.getElementById('phrase').firstElementChild;
   while (ul.firstElementChild) {
@@ -129,11 +138,8 @@ function resetScoreboard() {
 // SETUP THE GAME
 //===============================================
 // 1. Attach an event listener to the “Start Game” button. When it's clicked, the game should set / reset the game.
-// 2. Set the overlay display to 'none'.
-// 3. Clears the phrase section.
-// 4. Generates and inserts the new phrase.
-// 5. Clears the keyboard of 'disabled' buttons.
-// 6. Reset the scoreboard.
+// 2. Section overlay is set back to 'none' so it is hidden from the player.
+// 3. Executes the resetPhrase, resetKeyboard, and resetScoreboard functions.
 
 startButton.addEventListener('click', () => {
   sectionOverlay.style.display = 'none';
@@ -142,7 +148,6 @@ startButton.addEventListener('click', () => {
   resetScoreboard();
 });
 
-// To use the function, you’ll get the value returned by the getRandomPhrasesArray, save it to a variable, and pass it to addPhraseToDisplay as an argument:
 
 //===============================================
 // CHECK GUESS AGAINST PHRASE LETTERS
